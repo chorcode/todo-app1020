@@ -1,10 +1,10 @@
-import TodoApp from '@/components/TodoApp'
+import TodoAppClient from '@/components/TodoAppClient'
 
 export default function Home() {
   return (
     <main className="container">
       <h1>TODOアプリ</h1>
-      <TodoApp />
+      <TodoAppClient />
     </main>
   )
 }
