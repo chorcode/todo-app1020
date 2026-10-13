@@ -5,6 +5,8 @@ import { usePathname } from 'next/navigation'
 
 const links = [
   { href: '/', label: 'TODO' },
+  { href: '/stats', label: '統計' },
+  { href: '/help', label: '使い方' },
   { href: '/about', label: 'このアプリについて' },
 ]
 
