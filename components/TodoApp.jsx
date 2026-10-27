@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import TodoForm from './TodoForm'
 import TodoList from './TodoList'
 import { loadTodos } from '@/lib/storage'
+import { countRemaining } from '@/lib/todos'
 
 const STORAGE_KEY = 'todos'
 
@@ -31,7 +32,7 @@ export default function TodoApp() {
   }
 
 
-  const remaining = todos.filter((todo) => !todo.done).length
+  const remaining = countRemaining(todos)
 
   return (
     <div>
