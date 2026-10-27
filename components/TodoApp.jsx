@@ -39,7 +39,7 @@ export default function TodoApp() {
     <div>
       <TodoForm onAdd={addTodo} />
       <TodoList todos={todos} onToggle={toggleTodo} onDelete={deleteTodo} />
-      <p>全 {total} 件 / 完了 {completed} 件 / 残り {remaining} 件</p>
+      <p style={{ color: 'gray' }}>全 {total} 件 / 完了 {completed} 件 / 残り {remaining} 件</p>
       <button onClick={clearAll} disabled={todos.length === 0}>
         すべて削除
       </button>
