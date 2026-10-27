@@ -31,13 +31,15 @@ export default function TodoApp() {
   }
 
 
-  const remaining = todos.filter((todo) => !todo.done).length
+  const total = todos.length
+  const completed = todos.filter((todo) => todo.done).length
+  const remaining = total - completed
 
   return (
     <div>
       <TodoForm onAdd={addTodo} />
       <TodoList todos={todos} onToggle={toggleTodo} onDelete={deleteTodo} />
-      <p>残り {remaining} 件</p>
+      <p>全 {total} 件 / 完了 {completed} 件 / 残り {remaining} 件</p>
       <button onClick={clearAll} disabled={todos.length === 0}>
         すべて削除
       </button>
