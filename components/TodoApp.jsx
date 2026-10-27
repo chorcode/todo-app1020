@@ -25,6 +25,12 @@ export default function TodoApp() {
     setTodos(todos.filter((todo) => todo.id !== id))
   }
 
+  function clearAll() {
+    if (!window.confirm('すべての TODO を削除しますか？')) return
+    setTodos([])
+  }
+
+
   const remaining = todos.filter((todo) => !todo.done).length
 
   return (
@@ -32,6 +38,9 @@ export default function TodoApp() {
       <TodoForm onAdd={addTodo} />
       <TodoList todos={todos} onToggle={toggleTodo} onDelete={deleteTodo} />
       <p>残り {remaining} 件</p>
+      <button onClick={clearAll} disabled={todos.length === 0}>
+        すべて削除
+      </button>
     </div>
   )
 }
